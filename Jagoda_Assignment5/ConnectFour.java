@@ -37,7 +37,14 @@ public class ConnectFour
             System.out.println("\nWhat Column would you like to play? [0-5]\n");
             currentColumn = input.nextInt();
 
-            //Full Column
+            //Error Exception - if user enters number greater than amount of Columns
+            if(currentColumn > 6)
+            {
+                System.out.println("\nPlease only choose a number between [0-5]\n");
+                continue;
+            }
+
+            //Error Exception - if user enters value for a Full Column
             if(fullColumn(board, currentColumn))
             {
                 System.out.println("\nLooks like this column is full, please pick a new one\n");
