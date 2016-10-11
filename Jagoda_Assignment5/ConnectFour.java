@@ -44,7 +44,7 @@ public class ConnectFour
                 continue;
             }
 
-            //Error Exception - if user enters value for a Full Column
+            //Full Column
             if(fullColumn(board, currentColumn))
             {
                 System.out.println("\nLooks like this column is full, please pick a new one\n");
@@ -150,7 +150,7 @@ public class ConnectFour
         {
             for (int col = 0; col < 6 - 3; col++)
             {
-                if (board[row][col] != ' ' && board[row-1][col+1] != ' ' && board[row-2][col+2] != ' ' && board[row-3][col+3] != ' ')
+                if (board[row][col] != ' ' && board[row-1][col+1] != ' ' && board[row-2][col+2] != ' ' && board[row-3][col+3] != ' ' && board[row][col] == board[row][col])
                     return board[row][col];
             }
         }
@@ -159,16 +159,17 @@ public class ConnectFour
         {
             for (int col = 3; col < 6; col++)
             {
-                if (board[row][col] != ' ' && board[row-1][col-1] != ' ' && board[row-2][col-2] != ' ' && board[row-3][col-3] != ' ')
+                if (board[row][col] != ' ' && board[row-1][col-1] != ' ' && board[row-2][col-2] != ' ' && board[row-3][col-3] != ' ' && board[row][col] == board[row][col])
                     return board[row][col];
             }
         }
         return ' ';
     }
+    
     //Check for Tied Game
     public static boolean gameTie(char[][] board)
     {
-        if(board[0][0] != ' ' && board[0][1] != ' ' && board[0][2] != ' ' && board[0][3] != ' ' && board[0][4] != ' ' && board[0][5] != ' ' && board[0][6] != ' ')
+        if(board[0][0] != ' ' && board[0][1] != ' ' && board[0][2] != ' ' && board[0][3] != ' ' && board[0][4] != ' ' && board[0][5] != ' ' && board[0][6] != ' ' )
 		{
 		    return true;
 		}
