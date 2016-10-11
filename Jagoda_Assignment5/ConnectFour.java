@@ -148,18 +148,18 @@ public class ConnectFour
         //Ascending Diagonals
         for (int row = 3; row < 6; row++)
         {
-            for (int col = 0; col < 6 - 3; col++)
+            for (int col = 0; col < 7 - 3; col++)
             {
-                if (board[row][col] != ' ' && board[row-1][col+1] != ' ' && board[row-2][col+2] != ' ' && board[row-3][col+3] != ' ' && board[row][col] == board[row][col])
+                if (board[row][col] != ' ' && board[row-1][col+1] == board[row][col] && board[row-2][col+2] == board[row][col] && board[row-3][col+3] == board[row][col])
                     return board[row][col];
             }
         }
         //Descending Diagonals
         for (int row = 3; row < 6; row++)
         {
-            for (int col = 3; col < 6; col++)
+            for (int col = 3; col < 7; col++)
             {
-                if (board[row][col] != ' ' && board[row-1][col-1] != ' ' && board[row-2][col-2] != ' ' && board[row-3][col-3] != ' ' && board[row][col] == board[row][col])
+                if (board[row][col] != ' ' && board[row-1][col-1] == board[row][col] && board[row-2][col-2] == board[row][col] && board[row-3][col-3] == board[row][col])
                     return board[row][col];
             }
         }
