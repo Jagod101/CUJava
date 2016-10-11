@@ -35,7 +35,18 @@ public class ConnectFour
 
             //User Input for Column
             System.out.println("\nWhat Column would you like to play? [0-6]\n");
-            currentColumn = input.nextInt();
+
+            //Try and Catch if User Inserts Something Other than a Number
+            try
+            {
+                currentColumn = input.nextInt();
+            }
+            catch(Exception e)
+            {
+                input.nextLine();
+                System.out.println("\nInvalid Input\n");
+                continue;
+            }
 
             //Error Exception - if user enters number greater than amount of Columns
             if(currentColumn > 6)
