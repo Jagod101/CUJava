@@ -29,9 +29,9 @@ public class ConnectFour
 
             //Declare Player Turn
             if(player == 'X')
-                System.out.println("\nPlayer 1's turn!");
+                System.out.println("\nPlayer X's turn!");
             else
-                System.out.println("\nPlayer 2's turn!");
+                System.out.println("\nPlayer O's turn!");
 
             //User Input for Column
             System.out.println("\nWhat Column would you like to play? [0-6]\n");
@@ -69,7 +69,7 @@ public class ConnectFour
             if(winRow(board) == player)
             {
                 pBoard(board);
-                System.out.println("\nYou Won!");
+                System.out.println("\nPlayer " + player + " won!");
                 break;   
             }
 
@@ -77,7 +77,7 @@ public class ConnectFour
             if(winCol(board) == player)
             {
                 pBoard(board);
-                System.out.println("\nYou Won!");
+                System.out.println("\nPlayer " + player + " won!");
                 break;
             }
 
@@ -85,7 +85,7 @@ public class ConnectFour
             if(winDiag(board) == player)
             {
                 pBoard(board);
-                System.out.println("\nYou Won!");
+                System.out.println("\nPlayer " + player + " won!");
                 break;
             }
 
@@ -93,7 +93,7 @@ public class ConnectFour
             if(gameTie(board) == true)
             {
                 pBoard(board);
-                System.out.println("\nWhoops, looks like the game ended in a Tie!");
+                System.out.println("\nLooks like the game ended in a Tie!");
                 break;
             }
 
@@ -114,15 +114,15 @@ public class ConnectFour
     {
         for(int row = 0; row < 6; row++)
         {
-            int counter = 0;
-            for(int col = 0; col < 6; col++)
+            int counter = 1;
+            for(int col = 0; col < 7; col++)
             {
                 if(board[row][col] != ' ' && board[row][col] == board[row][col+1])
                     counter++;
                 else
                     counter = 1;
 
-                if (counter >= 4)
+                if (counter == 4)
                 {
                     return board[row][col];
                 }
@@ -134,9 +134,9 @@ public class ConnectFour
     //Check for Game Win in a Column
     public static char winCol(char[][] board)
     {
-        for(int col = 0; col < 6; col++)
+        for(int col = 0; col < 7; col++)
         {
-            int counter = 0;
+            int counter = 1;
             for(int row = 0; row < 5; row++)
             {
                 if(board[row][col] != ' ' && board[row][col] == board[row+1][col])
