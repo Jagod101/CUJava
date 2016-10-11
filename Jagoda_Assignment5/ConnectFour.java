@@ -4,7 +4,7 @@ public class ConnectFour
 {
     public static void main (String[] args)
     {
-        char[][] board = new char[6][7];
+        char[][] board = new char[6][8];
 
         Scanner input = new Scanner(System.in);
         char player = 'X';
@@ -34,13 +34,13 @@ public class ConnectFour
                 System.out.println("\nPlayer 2's turn!");
 
             //User Input for Column
-            System.out.println("\nWhat Column would you like to play? [0-5]\n");
+            System.out.println("\nWhat Column would you like to play? [0-6]\n");
             currentColumn = input.nextInt();
 
             //Error Exception - if user enters number greater than amount of Columns
             if(currentColumn > 6)
             {
-                System.out.println("\nPlease only choose a number between [0-5]\n");
+                System.out.println("\nPlease only choose a number between [0-6]\n");
                 continue;
             }
 
@@ -165,7 +165,7 @@ public class ConnectFour
         }
         return ' ';
     }
-    
+
     //Check for Tied Game
     public static boolean gameTie(char[][] board)
     {
@@ -204,7 +204,7 @@ public class ConnectFour
     {
         for(int row = 0; row < 6; row++)
         {
-            for(int col = 0; col < 7; col++)
+            for(int col = 0; col < 8; col++)
             {
                 System.out.print(" | " + board[row][col]);
             }
