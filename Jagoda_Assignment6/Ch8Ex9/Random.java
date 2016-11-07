@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Ch8Ex9
+public class Random
 {
     public static void printDiceRolls(Random randGenerator)
     {
