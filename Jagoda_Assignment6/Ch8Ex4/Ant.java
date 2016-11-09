@@ -1,5 +1,7 @@
 public class Ant extends Organism
 {
+    private final int breedingThreshold = 3;
+
     public Ant()
     {
         super();
@@ -7,23 +9,53 @@ public class Ant extends Organism
         this.breedTicks = 3;
     }
 
-    public Ant(int row, int col)
+    public Ant(int x, int y)
     {
         super();
         this.symbol  = 'o';
         this.breedTicks = 3;
     }
 
-/*
-    public Ant(Ant a)
+    public void move()
     {
-        super(a);
-        this.symbol = a.symbol;
-        this.breedTicks = a.breedTicks;
+        //moveToEmpty();
     }
-*/
-    public void moveBug(int direction)
-    {
 
-    }
+    /*public void breed(Organism world, int x, int y)
+    {
+        if(this.turns == 3)
+        {
+            for(int b = 0; b < 4; b++)
+            {
+                switch(b)
+                {
+                    case Up:
+                        if(world.isOccupied(x, y-1))
+                        {
+                            world.spawnBug(x, y-1, new Ant());
+                            return;
+                        }
+                        break;
+                    case Left:
+                        if(world.isOccupied())
+                        {
+                            world.spawnBug();
+                            return;
+                        }
+                    case Right:
+                        if(world.isOccupied())
+                        {
+                            world.spawnBug();
+                            return;
+                        }
+                    case Down:
+                        if(world.isOccupied())
+                        {
+                            world.spawnBug();
+                            return;
+                        }
+                }
+            }
+        }
+    }*/
 }

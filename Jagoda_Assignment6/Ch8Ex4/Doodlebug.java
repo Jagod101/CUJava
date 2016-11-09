@@ -1,34 +1,42 @@
 public class Doodlebug extends Organism
 {
-    static int starveThreshold = 3;
+    private final int starveThreshold = 3;
+    private final int breedingThreshold = 8;
     int timeSinceEat;
 
     public Doodlebug()
     {
         super();
-        this.symbol = 'X';
-        this.breedTicks = 8;
-        this.timeSinceEat = 0;
     }
 
-    public Doodlebug(int row, int col)
+    public Doodlebug(int x, int y)
     {
         super();
         this.symbol = 'X';
         this.breedTicks = 8;
         this.timeSinceEat = 0;
     }
-/*
-    public Doodlebug(Doodlebug d)
+
+    public void moveBug(Organism[][] world)
     {
-        super(d);
-        this.symbol = d.symbol;
-        this.breedTicks = d.breedTicks;
-        this.timeSinceEat = d.timeSinceEat;
+    
     }
-*/
-    public void moveBug(int direction)
+
+    public void breed(Organism[][] world)
     {
 
+    }
+
+    public void starveThreshold(Organism world, int x, int y)
+    {
+
+    }
+
+    public void death(Board world, int x, int y)
+    {
+        if(timeSinceEat == 3)
+        {
+            world.bugDeath(this, x, y);
+        }
     }
 }
