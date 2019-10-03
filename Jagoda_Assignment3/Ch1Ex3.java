@@ -23,6 +23,6 @@ public class Ch1Ex3
 		
 		//String LatinName = newFirst + " " + newLast;
 		
-		System.out.println(LatinName);
+		System.out.println(latinName);
 	}
 }
